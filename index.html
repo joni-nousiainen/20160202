@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>20160202</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<div id="main-container" class="container">
+    <div id="start" class="part">
+        <div class="jumbotron">
+            <h1>Hei Niina,</h1>
+            <p>Mukava, kun pääsit tulemaan.</p>
+            <p>Sinua odottaa pieni <em>mysteeri</em>.</p>
+            <p>Ole hyvä, jatka eteenpäin.</p>
+            <div class="btn-group">
+                <button class="btn btn-lg btn-default" onclick="alert('Edellistä ei ole!')">Edellinen</button>
+                <button class="btn btn-lg btn-primary" onclick="showPart('doubt')">Seuraava</button>
+            </div>
+        </div>
+    </div>
+    <div id="doubt" class="part">
+        <div class="jumbotron">
+            <p>Niinan mieleen hiipii epäilys...</p>
+            <p><img src="img/not_sure_if.jpg" style="width: 100%" /></p>
+            <p>Epäilyksestä huolimatta hän päättää jatkaa eteenpäin.</p>
+            <div class="btn-group">
+                <button class="btn btn-lg btn-default" onclick="showPart('start')">Edellinen</button>
+                <button class="btn btn-lg btn-primary" onclick="showPart('mystery1')">Seuraava</button>
+            </div>
+        </div>
+    </div>
+    <div id="mystery1" class="part">
+        <div class="jumbotron">
+            <p>TODO</p>
+            <div class="btn-group">
+                <button class="btn btn-lg btn-default" onclick="showPart('doubt')">Edellinen</button>
+                <button class="btn btn-lg btn-primary" onclick="alert('TODO')">Seuraava</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="js.js"></script>
+
+</body>
+</html>

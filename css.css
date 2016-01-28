@@ -1,0 +1,12 @@
+#main-container {
+    max-width: 700px;
+    padding: 5px;
+}
+
+.jumbotron {
+    text-align: center;
+}
+
+.part {
+    display: none;
+}
