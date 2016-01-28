@@ -59,10 +59,26 @@
     </div>
     <div id="mystery2" class="part">
         <div class="jumbotron">
-            <p>two</p>
+            <p>Kasvoiltani voit normaalisti lukea, kun lämpö riittää hikoiluun.</p>
+            <p>Tänään löydät <em>selästäni</em> vastauksen, jolla pääset eteenpäin.</p>
+            <p class="hint hidden"><img src="img/thermometer.jpg" style="width: 100%" /></p>
+            <form>
+                <div class="form-group form-group-lg">
+                    <input id="thermometerNumber" class="form-control" type="text" minlength="4" maxlength="4">
+                </div>
+            </form>
+            <div class="alert alert-success hidden">
+                Oikein! Voit jatkaa eteenpäin.
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+            </div>
+            <div class="alert alert-danger hidden" role="alert">
+                Väärin meni, yritä uudelleen.
+                <span class="glyphicon glyphicon-thumbs-down"></span>
+                <p><button class="btn btn-link hint-trigger">Näytä vinkki</button></p>
+            </div>
             <div class="btn-group">
                 <button class="btn btn-lg btn-default" onclick="showPart('mystery1')">Edellinen</button>
-                <button class="btn btn-lg btn-primary" onclick="showPart('mystery3')">Seuraava</button>
+                <button class="btn btn-lg btn-primary forward" onclick="showPart('mystery3')" disabled>Seuraava</button>
             </div>
         </div>
     </div>
