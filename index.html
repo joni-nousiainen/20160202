@@ -36,10 +36,60 @@
     </div>
     <div id="mystery1" class="part">
         <div class="jumbotron">
-            <p>TODO</p>
+            <p>Aloitetaan helpolla...</p>
+            <p>Minä vuonna Joni syntyi?</p>
+            <form>
+                <div class="form-group form-group-lg">
+                    <input id="birthYear" class="form-control" type="text" minlength="4" maxlength="4">
+                </div>
+            </form>
+            <div class="alert alert-success hidden">
+                Oikein! Voit jatkaa eteenpäin.
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+            </div>
+            <div class="alert alert-danger hidden" role="alert">
+                Väärin meni, yritä uudelleen.
+                <span class="glyphicon glyphicon-thumbs-down"></span>
+            </div>
             <div class="btn-group">
                 <button class="btn btn-lg btn-default" onclick="showPart('doubt')">Edellinen</button>
-                <button class="btn btn-lg btn-primary" onclick="alert('TODO')">Seuraava</button>
+                <button class="btn btn-lg btn-primary forward" onclick="showPart('mystery2')" disabled>Seuraava</button>
+            </div>
+        </div>
+    </div>
+    <div id="mystery2" class="part">
+        <div class="jumbotron">
+            <p>two</p>
+            <div class="btn-group">
+                <button class="btn btn-lg btn-default" onclick="showPart('mystery1')">Edellinen</button>
+                <button class="btn btn-lg btn-primary" onclick="showPart('mystery3')">Seuraava</button>
+            </div>
+        </div>
+    </div>
+    <div id="mystery3" class="part">
+        <div class="jumbotron">
+            <p>three</p>
+            <div class="btn-group">
+                <button class="btn btn-lg btn-default" onclick="showPart('mystery2')">Edellinen</button>
+                <button class="btn btn-lg btn-primary" onclick="showPart('mystery4')">Seuraava</button>
+            </div>
+        </div>
+    </div>
+    <div id="mystery4" class="part">
+        <div class="jumbotron">
+            <p>four</p>
+            <div class="btn-group">
+                <button class="btn btn-lg btn-default" onclick="showPart('mystery3')">Edellinen</button>
+                <button class="btn btn-lg btn-primary" onclick="showPart('finish')">Seuraava</button>
+            </div>
+        </div>
+    </div>
+    <div id="finish" class="part">
+        <div class="jumbotron">
+            <p>finish</p>
+            <div class="btn-group">
+                <button class="btn btn-lg btn-default" onclick="showPart('mystery3')">Edellinen</button>
+                <button class="btn btn-lg btn-primary" onclick="showPart('start')">Takaisin alkuun</button>
             </div>
         </div>
     </div>
