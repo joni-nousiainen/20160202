@@ -42,6 +42,12 @@ function finish() {
 
 $(document).ready(function () {
 
+    $('input').keypress(function(e) {
+        if(e.keyCode == 13) {
+            e.preventDefault();
+        }
+    });
+
     $('#birthYear').bind('change paste keyup', function () {
         /*
             duh!
