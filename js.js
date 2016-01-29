@@ -26,9 +26,26 @@ function showHint() {
     $('.part:not(:hidden) .hint').toggleClass('hidden');
 }
 
+var finishMusic = null;
+
+function finish() {
+    showPart('finish');
+
+    if (finishMusic == null) {
+        finishMusic = new Audio('http://wav.urbandictionary.com/rickrolled-33940.wav');
+    }
+
+    if (finishMusic.paused) {
+        finishMusic.play()
+    }
+}
+
 $(document).ready(function () {
 
     $('#birthYear').bind('change paste keyup', function () {
+        /*
+            duh!
+         */
         validateField(this, '1984')
     });
 
@@ -42,10 +59,36 @@ $(document).ready(function () {
         validateField(this, '6231');
     });
 
+    $('#televisionNumber').bind("change paste keyup", function() {
+        /*
+            TV ilman katsojia on pelkkä nolla...
+            Nolla, nolla, nolla!
+         */
+        validateField(this, '0000');
+    });
+
+    $('#fusePanelNumber').bind("change paste keyup", function() {
+        /*
+            Suorituksesi tähän mennessä
+            on ihan 10/10.
+         */
+        validateField(this, '1010');
+    });
+
+    $('#drinkingCupNumber').bind("change paste keyup", function() {
+        /*
+            hau hau
+            hau hau hau hau
+            hau
+            hau hau hau
+         */
+        validateField(this, '2413');
+    });
+
     $('.hint-trigger').click(function () {
         showHint();
     });
 
-    showPart('mystery2');
+    showPart('start');
 
 });

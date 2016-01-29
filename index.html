@@ -14,11 +14,11 @@
     <div id="start" class="part">
         <div class="jumbotron">
             <h1>Hei Niina,</h1>
-            <p>Mukava, kun pääsit tulemaan.</p>
-            <p>Sinua odottaa pieni <em>mysteeri</em>.</p>
+            <p>Mukava, kun pääsit tulemaan. <span class="glyphicon glyphicon-heart"></span></p>
+            <p>Sinua odottaa pieni <em>synttärimysteeri</em>.</p>
             <p>Ole hyvä, jatka eteenpäin.</p>
             <div class="btn-group">
-                <button class="btn btn-lg btn-default" onclick="alert('Edellistä ei ole!')">Edellinen</button>
+                <button class="btn btn-lg btn-default" disabled>Edellinen</button>
                 <button class="btn btn-lg btn-primary" onclick="showPart('doubt')">Seuraava</button>
             </div>
         </div>
@@ -26,7 +26,7 @@
     <div id="doubt" class="part">
         <div class="jumbotron">
             <p>Niinan mieleen hiipii epäilys...</p>
-            <p><img src="img/not_sure_if.jpg" style="width: 100%" /></p>
+            <p><img src="img/not_sure_if.jpg" /></p>
             <p>Epäilyksestä huolimatta hän päättää jatkaa eteenpäin.</p>
             <div class="btn-group">
                 <button class="btn btn-lg btn-default" onclick="showPart('start')">Edellinen</button>
@@ -38,9 +38,11 @@
         <div class="jumbotron">
             <p>Aloitetaan helpolla...</p>
             <p>Minä vuonna Joni syntyi?</p>
+            <p class="hint hidden">Neljä vuotta ennen sinua.</p>
+            <p><button class="btn btn-link hint-trigger">Näytä vinkki</button></p>
             <form>
                 <div class="form-group form-group-lg">
-                    <input id="birthYear" class="form-control" type="text" minlength="4" maxlength="4">
+                    <input id="birthYear" class="form-control" type="text" maxlength="4">
                 </div>
             </form>
             <div class="alert alert-success hidden">
@@ -61,10 +63,11 @@
         <div class="jumbotron">
             <p>Kasvoiltani voit normaalisti lukea, kun lämpö riittää hikoiluun.</p>
             <p>Tänään löydät <em>selästäni</em> vastauksen, jolla pääset eteenpäin.</p>
-            <p class="hint hidden"><img src="img/thermometer.jpg" style="width: 100%" /></p>
+            <p class="hint hidden"><img src="img/thermometer.jpg" /></p>
+            <p><button class="btn btn-link hint-trigger">Näytä vinkki</button></p>
             <form>
                 <div class="form-group form-group-lg">
-                    <input id="thermometerNumber" class="form-control" type="text" minlength="4" maxlength="4">
+                    <input id="thermometerNumber" class="form-control" type="text" maxlength="4">
                 </div>
             </form>
             <div class="alert alert-success hidden">
@@ -74,7 +77,6 @@
             <div class="alert alert-danger hidden" role="alert">
                 Väärin meni, yritä uudelleen.
                 <span class="glyphicon glyphicon-thumbs-down"></span>
-                <p><button class="btn btn-link hint-trigger">Näytä vinkki</button></p>
             </div>
             <div class="btn-group">
                 <button class="btn btn-lg btn-default" onclick="showPart('mystery1')">Edellinen</button>
@@ -84,28 +86,132 @@
     </div>
     <div id="mystery3" class="part">
         <div class="jumbotron">
-            <p>three</p>
+            <p>Keskimäärin minua katsellaan monta tuntia päivässä, mutta tässä kodissa minua ei ole katseltu pitkään aikaan.</p>
+            <p>Nyt kannattaisi vilkaista, jos mielit eteenpäin.</p>
+            <p class="hint hidden"><img src="img/television.jpg" /></p>
+            <p><button class="btn btn-link hint-trigger">Näytä vinkki</button></p>
+            <form>
+                <div class="form-group form-group-lg">
+                    <input id="televisionNumber" class="form-control" type="text" maxlength="4">
+                </div>
+            </form>
+            <div class="alert alert-success hidden">
+                Oikein! Voit jatkaa eteenpäin.
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+            </div>
+            <div class="alert alert-danger hidden" role="alert">
+                Väärin meni, yritä uudelleen.
+                <span class="glyphicon glyphicon-thumbs-down"></span>
+            </div>
             <div class="btn-group">
                 <button class="btn btn-lg btn-default" onclick="showPart('mystery2')">Edellinen</button>
+                <button class="btn btn-lg btn-primary forward" onclick="showPart('meme1')" disabled>Seuraava</button>
+            </div>
+        </div>
+    </div>
+    <div id="meme1" class="part">
+        <div class="jumbotron">
+            <p>Välikevennys:</p>
+            <p><img src="img/i_dont_always.jpg" /></p>
+            <p>Ja sitten eteenpäin... <span class="glyphicon glyphicon-sunglasses"></span></p>
+            <div class="btn-group">
+                <button class="btn btn-lg btn-default" onclick="showPart('mystery3')">Edellinen</button>
                 <button class="btn btn-lg btn-primary" onclick="showPart('mystery4')">Seuraava</button>
             </div>
         </div>
     </div>
     <div id="mystery4" class="part">
         <div class="jumbotron">
-            <p>four</p>
+            <p>Pysyn poissa silmistä, seinän sisuksissa.</p>
+            <p>Mutta ilman minua ei olisi sähköä tai verkkoyhteyttä.</p>
+            <p>Löydä minut, pääset eteenäpäin.</p>
+            <p class="hint hidden"><img src="img/fuse_panel.jpg" /></p>
+            <p><button class="btn btn-link hint-trigger">Näytä vinkki</button></p>
+            <form>
+                <div class="form-group form-group-lg">
+                    <input id="fusePanelNumber" class="form-control" type="text" maxlength="4">
+                </div>
+            </form>
+            <div class="alert alert-success hidden">
+                Oikein! Voit jatkaa eteenpäin.
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+            </div>
+            <div class="alert alert-danger hidden" role="alert">
+                Väärin meni, yritä uudelleen.
+                <span class="glyphicon glyphicon-thumbs-down"></span>
+            </div>
             <div class="btn-group">
-                <button class="btn btn-lg btn-default" onclick="showPart('mystery3')">Edellinen</button>
-                <button class="btn btn-lg btn-primary" onclick="showPart('finish')">Seuraava</button>
+                <button class="btn btn-lg btn-default" onclick="showPart('meme1')">Edellinen</button>
+                <button class="btn btn-lg btn-primary forward" onclick="showPart('meme2')" disabled>Seuraava</button>
+            </div>
+        </div>
+    </div>
+    <div id="meme2" class="part">
+        <div class="jumbotron">
+            <p><img src="img/first_world_problems.jpg" /></p>
+            <div class="btn-group">
+                <button class="btn btn-lg btn-default" onclick="showPart('mystery4')">Edellinen</button>
+                <button class="btn btn-lg btn-primary" onclick="showPart('meme3')">Seuraava</button>
+            </div>
+        </div>
+    </div>
+    <div id="meme3" class="part">
+        <div class="jumbotron">
+            <p><img src="img/one_does_not_simply.jpg" /></p>
+            <div class="btn-group">
+                <button class="btn btn-lg btn-default" onclick="showPart('meme2')">Edellinen</button>
+                <button class="btn btn-lg btn-primary" onclick="showPart('mystery5')">Seuraava</button>
+            </div>
+        </div>
+    </div>
+    <div id="mystery5" class="part">
+        <div class="jumbotron">
+            <p>Vetinen ääni, joka herättää yöllä</p>
+            <p><span class="glyphicon glyphicon glyphicon-tint"></span> slurp slurp slurp slurp... <span class="glyphicon glyphicon glyphicon-tint"></span></p>
+            <p>Lähteiltäni löydät avaimen eteenpäin</p>
+            <p class="hint hidden"><img src="img/drinking_cup.jpg" /></p>
+            <p><button class="btn btn-link hint-trigger">Näytä vinkki</button></p>
+            <form>
+                <div class="form-group form-group-lg">
+                    <input id="drinkingCupNumber" class="form-control" type="text" maxlength="4">
+                </div>
+            </form>
+            <div class="alert alert-success hidden">
+                Oikein! Voit jatkaa eteenpäin.
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+            </div>
+            <div class="alert alert-danger hidden" role="alert">
+                Väärin meni, yritä uudelleen.
+                <span class="glyphicon glyphicon-thumbs-down"></span>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-lg btn-default" onclick="showPart('meme3')">Edellinen</button>
+                <button class="btn btn-lg btn-primary forward" onclick="showPart('mystery6')" disabled>Seuraava</button>
+            </div>
+        </div>
+    </div>
+    <div id="mystery6" class="part">
+        <div class="jumbotron">
+            <p>Kuin kunnon merirosvo hautaan aarteeni tietenkin...</p>
+            <p class="hint hidden"><img src="img/chest.jpg" /></p>
+            <p><button class="btn btn-link hint-trigger">Näytä vinkki</button></p>
+            <div class="btn-group">
+                <button class="btn btn-lg btn-default" onclick="showPart('meme3')">Edellinen</button>
+                <button class="btn btn-lg btn-primary forward" onclick="confirm('Löysitkö aarteen?\nOK → Kyllä\nCancel → En') ? finish() : false">Klikkaa vasta lopuksi</button>
             </div>
         </div>
     </div>
     <div id="finish" class="part">
         <div class="jumbotron">
-            <p>finish</p>
+            <h1>Onneksi olkoon,</h1>
+            <p>ratkaisit synttäriyllärin!</p>
+            <p><span class="glyphicon glyphicon-flag"></span> <span class="glyphicon glyphicon-flag"></span> <span class="glyphicon glyphicon-flag"></span></p>
+            <p>Oikein hyvää syntymäpäivää rakkaalle Niinalle!</p>
+            <p><span class="glyphicon glyphicon-heart"></span> <span class="glyphicon glyphicon-heart"></span> <span class="glyphicon glyphicon-heart"></span></p>
+            <p>T: Joni, the mystery man <span class="glyphicon glyphicon-sunglasses"></span></p>
             <div class="btn-group">
-                <button class="btn btn-lg btn-default" onclick="showPart('mystery3')">Edellinen</button>
-                <button class="btn btn-lg btn-primary" onclick="showPart('start')">Takaisin alkuun</button>
+                <button class="btn btn-lg btn-default" onclick="showPart('mystery6')">Edellinen</button>
+                <button class="btn btn-lg btn-default" onclick="showPart('start')">Takaisin alkuun</button>
             </div>
         </div>
     </div>
