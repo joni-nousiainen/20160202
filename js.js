@@ -50,7 +50,7 @@ $(document).ready(function () {
 
     $('#birthYear').bind('change paste keyup', function () {
         /*
-            duh!
+            1984, duh! :)
          */
         validateField(this, '1984')
     });
